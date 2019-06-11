@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Admin Dashboard</title>
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="css/mdb.min.css" rel="stylesheet">
+	<!-- Your custom styles (optional) -->
+	<link href="css/style.min.css" rel="stylesheet">
+	<style>
+		#badge2{
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="grey lighten-3">
+
+	<!--Main Navigation-->
+	<header>
+
+		<!-- Navbar -->
+		<nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+			<div class="container-fluid">
+
+				<!-- Brand -->
+				<a class="navbar-brand waves-effect" href="../index.html" target="_blank">
+					<strong class="blue-text">SAS EVENTS</strong>
+					<!-- <img src="img/logo/sas.png" class="img" alt=""> -->
+				</a>
+
+				<!-- Collapse -->
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+				 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<!-- Links -->
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+					<!-- Left -->
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="../index.html#about_us_inpage">About Us</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="../index.html#discover_inpage">Discover</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="../index.html#events_inpage">Events</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="../index.html">Logout</a>
+						</li>
+					</ul>
+
+					<!-- Right -->
+					<ul class="navbar-nav nav-flex-icons">
+						<li class="nav-item">
+							<a href="#" class="nav-link waves-effect" target="_blank">
+								<i class="fa fa-facebook"></i>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link waves-effect" target="_blank">
+								<i class="fa fa-twitter"></i>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link waves-effect" target="_blank">
+								<i class="fa fa-google-plus"></i>
+							</a>
+						</li>
+					</ul>
+
+				</div>
+
+			</div>
+		</nav>
+		<!-- Navbar -->
+
+		<!-- Sidebar -->
+		<div class="sidebar-fixed position-fixed">
+
+			<a class="logo-wrapper waves-effect ml-4" href="../index.html">
+				<img src="img/logo/sas.png" class="img-fluid" alt="">
+			</a>
+
+			<div class="list-group list-group-flush">
+				<a href="#" class="list-group-item active waves-effect">
+					<i class="fa fa-users fa-2x mr-3"></i>Attendees</a>
+				<a href="eventDetails.html" class="list-group-item list-group-item-action waves-effect">
+					<i class="fa fa-database mr-3"></i>Details</a>
+				<a href="#" class="list-group-item list-group-item-action waves-effect">
+					<i class="fa fa-ticket mr-3"></i>Tickets</a>
+				<a href="#" class="list-group-item list-group-item-action waves-effect">
+					<i class="fa fa-wpforms mr-3"></i>Forms</a>
+				<!-- <a href="#" class="list-group-item list-group-item-action waves-effect">
+                    <i class="fa fa-money mr-3"></i>Discounts</a> -->
+				<a href="#" class="list-group-item list-group-item-action waves-effect">
+					<i class="fa fa-gear mr-3"></i>Settings</a>
+			</div>
+
+		</div>
+		<!-- Sidebar -->
+
+	</header>
+	<!--Main Navigation-->
+
+	<!--Main layout-->
+	<main class="pt-5 mx-lg-5">
+		<div class="container-fluid mt-5">
+
+			<!-- Heading -->
+			<div class="card mb-4 wow fadeIn">
+
+				<!--Card content-->
+				<div class="card-body d-sm-flex justify-content-between">
+					<div class="d-flex flex-row">
+						<h4 class="pr-3">
+							Event Name
+							<span class="badge badge-pill green ml-3" id="badge1">LIVE</span>
+							<span class="badge badge-pill red ml-3" id="badge2">NOT LIVE</span>
+						</h4>
+						<label class="bs-switch">
+							<input type="checkbox" checked id="checkbox1" onclick="badgeRemover()">
+							<span class="slider round"></span>
+						</label>
+					</div>
+					<form class="d-flex justify-content-center">
+						<!-- Default input -->
+						<input type="search" placeholder="Type your query" aria-label="Search" class="form-control">
+						<button class="btn btn-primary btn-sm my-0 p" type="submit">
+							<i class="fa fa-search"></i>
+						</button>
+					</form>
+				</div>
+			</div>
+			<!-- Heading -->
+
+			<!--Grid row-->
+			<div class="row wow fadeIn">
+
+				<!--Grid column-->
+				<div class="col-md-12 mb-4">
+
+					<!--Card-->
+					<div class="card">
+						<h4 class="text-center pt-4">
+							Attendees
+							<span class="badge badge-pill green ml-3">12</span>
+						</h4>
+						<hr class="my-2">
+						<!--Card content-->
+						<div class="card-body">
+							<div class="row">
+								<div class="col-md-12 text-center">
+									<button class="btn btn-outline-primary waves-effect"><i class="fa fa-download mr-2"></i>Download Attendees
+										List</button>
+									<button class="btn btn-outline-primary waves-effect"><i class="fa fa-envelope mr-2"></i>Send Announcement</button>
+									<button class="btn btn-danger waves-effect"><i class="fa fa-plus mr-2"></i>Add new Attendee</button>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-12 my-4">
+									<table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
+										<thead>
+											<tr>
+												<th class="th-sm">Name
+													<i class="fa fa-sort float-right" aria-hidden="true"></i>
+												</th>
+												<th class="th-sm">Office
+													<i class="fa fa-sort float-right" aria-hidden="true"></i>
+												</th>
+												<th class="th-sm">Age
+													<i class="fa fa-sort float-right" aria-hidden="true"></i>
+												</th>
+												<th class="th-sm">Start date
+													<i class="fa fa-sort float-right" aria-hidden="true"></i>
+												</th>
+												<th class="th-sm">Salary
+													<i class="fa fa-sort float-right" aria-hidden="true"></i>
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Tiger Nixon</td>
+												<td>Edinburgh</td>
+												<td>61</td>
+												<td>2011/04/25</td>
+												<td>₹320,800</td>
+											</tr>
+											<tr>
+												<td>Garrett Winters</td>
+												<td>Tokyo</td>
+												<td>63</td>
+												<td>2011/07/25</td>
+												<td>₹170,750</td>
+											</tr>
+											<tr>
+												<td>Ashton Cox</td>
+												<td>San Francisco</td>
+												<td>66</td>
+												<td>2009/01/12</td>
+												<td>₹86,000</td>
+											</tr>
+											<tr>
+												<td>Cedric Kelly</td>
+												<td>Edinburgh</td>
+												<td>22</td>
+												<td>2012/03/29</td>
+												<td>₹433,060</td>
+											</tr>
+											<tr>
+												<td>Airi Satou</td>
+												<td>Tokyo</td>
+												<td>33</td>
+												<td>2008/11/28</td>
+												<td>₹162,700</td>
+											</tr>
+											<tr>
+												<td>Brielle Williamson</td>
+												<td>New York</td>
+												<td>61</td>
+												<td>2012/12/02</td>
+												<td>₹372,000</td>
+											</tr>
+											<tr>
+												<td>Herrod Chandler</td>
+												<td>San Francisco</td>
+												<td>59</td>
+												<td>2012/08/06</td>
+												<td>₹137,500</td>
+											</tr>
+											<tr>
+												<td>Rhona Davidson</td>
+												<td>Tokyo</td>
+												<td>55</td>
+												<td>2010/10/14</td>
+												<td>₹327,900</td>
+											</tr>
+											<tr>
+												<td>Colleen Hurst</td>
+												<td>San Francisco</td>
+												<td>39</td>
+												<td>2009/09/15</td>
+												<td>₹205,500</td>
+											</tr>
+											<tr>
+												<td>Sonya Frost</td>
+												<td>Edinburgh</td>
+												<td>23</td>
+												<td>2008/12/13</td>
+												<td>₹103,600</td>
+											</tr>
+											<tr>
+												<td>Jena Gaines</td>
+												<td>London</td>
+												<td>30</td>
+												<td>2008/12/19</td>
+												<td>₹90,560</td>
+											</tr>
+											<tr>
+												<td>Quinn Flynn</td>
+												<td>Edinburgh</td>
+												<td>22</td>
+												<td>2013/03/03</td>
+												<td>₹342,000</td>
+											</tr>
+											<tr>
+												<td>Charde Marshall</td>
+												<td>San Francisco</td>
+												<td>36</td>
+												<td>2008/10/16</td>
+												<td>₹470,600</td>
+											</tr>
+											<tr>
+												<td>Haley Kennedy</td>
+												<td>London</td>
+												<td>43</td>
+												<td>2012/12/18</td>
+												<td>₹313,500</td>
+											</tr>
+											<tr>
+												<td>Tatyana Fitzpatrick</td>
+												<td>London</td>
+												<td>19</td>
+												<td>2010/03/17</td>
+												<td>₹385,750</td>
+											</tr>
+											<tr>
+												<td>Michael Silva</td>
+												<td>London</td>
+												<td>66</td>
+												<td>2012/11/27</td>
+												<td>₹198,500</td>
+											</tr>
+											<tr>
+												<td>Paul Byrd</td>
+												<td>New York</td>
+												<td>64</td>
+												<td>2010/06/09</td>
+												<td>₹725,000</td>
+											</tr>
+											<tr>
+												<td>Gloria Little</td>
+												<td>New York</td>
+												<td>59</td>
+												<td>2009/04/10</td>
+												<td>₹237,500</td>
+											</tr>
+											<tr>
+												<td>Bradley Greer</td>
+												<td>London</td>
+												<td>41</td>
+												<td>2012/10/13</td>
+												<td>₹132,000</td>
+											</tr>
+											<tr>
+												<td>Dai Rios</td>
+												<td>Edinburgh</td>
+												<td>35</td>
+												<td>2012/09/26</td>
+												<td>₹217,500</td>
+											</tr>
+											<tr>
+												<td>Jenette Caldwell</td>
+												<td>New York</td>
+												<td>30</td>
+												<td>2011/09/03</td>
+												<td>₹345,000</td>
+											</tr>
+											<tr>
+												<td>Yuri Berry</td>
+												<td>New York</td>
+												<td>40</td>
+												<td>2009/06/25</td>
+												<td>₹675,000</td>
+											</tr>
+											<tr>
+												<td>Caesar Vance</td>
+												<td>New York</td>
+												<td>21</td>
+												<td>2011/12/12</td>
+												<td>₹106,450</td>
+											</tr>
+											<tr>
+												<td>Doris Wilder</td>
+												<td>Sidney</td>
+												<td>23</td>
+												<td>2010/09/20</td>
+												<td>₹85,600</td>
+											</tr>
+											<tr>
+												<td>Angelica Ramos</td>
+												<td>London</td>
+												<td>47</td>
+												<td>2009/10/09</td>
+												<td>₹1,200,000</td>
+											</tr>
+											<tr>
+												<td>Gavin Joyce</td>
+												<td>Edinburgh</td>
+												<td>42</td>
+												<td>2010/12/22</td>
+												<td>₹92,575</td>
+											</tr>
+											<tr>
+												<td>Jennifer Chang</td>
+												<td>Singapore</td>
+												<td>28</td>
+												<td>2010/11/14</td>
+												<td>₹357,650</td>
+											</tr>
+											<tr>
+												<td>Brenden Wagner</td>
+												<td>San Francisco</td>
+												<td>28</td>
+												<td>2011/06/07</td>
+												<td>₹206,850</td>
+											</tr>
+											<tr>
+												<td>Fiona Green</td>
+												<td>San Francisco</td>
+												<td>48</td>
+												<td>2010/03/11</td>
+												<td>₹850,000</td>
+											</tr>
+											<tr>
+												<td>Shou Itou</td>
+												<td>Tokyo</td>
+												<td>20</td>
+												<td>2011/08/14</td>
+												<td>₹163,000</td>
+											</tr>
+											<tr>
+												<td>Michelle House</td>
+												<td>Sidney</td>
+												<td>37</td>
+												<td>2011/06/02</td>
+												<td>₹95,400</td>
+											</tr>
+											<tr>
+												<td>Suki Burks</td>
+												<td>London</td>
+												<td>53</td>
+												<td>2009/10/22</td>
+												<td>₹114,500</td>
+											</tr>
+											<tr>
+												<td>Prescott Bartlett</td>
+												<td>London</td>
+												<td>27</td>
+												<td>2011/05/07</td>
+												<td>₹145,000</td>
+											</tr>
+											<tr>
+												<td>Gavin Cortez</td>
+												<td>San Francisco</td>
+												<td>22</td>
+												<td>2008/10/26</td>
+												<td>₹235,500</td>
+											</tr>
+											<tr>
+												<td>Martena Mccray</td>
+												<td>Edinburgh</td>
+												<td>46</td>
+												<td>2011/03/09</td>
+												<td>₹324,050</td>
+											</tr>
+											<tr>
+												<td>Unity Butler</td>
+												<td>San Francisco</td>
+												<td>47</td>
+												<td>2009/12/09</td>
+												<td>₹85,675</td>
+											</tr>
+											<tr>
+												<td>Howard Hatfield</td>
+												<td>San Francisco</td>
+												<td>51</td>
+												<td>2008/12/16</td>
+												<td>₹164,500</td>
+											</tr>
+											<tr>
+												<td>Hope Fuentes</td>
+												<td>San Francisco</td>
+												<td>41</td>
+												<td>2010/02/12</td>
+												<td>₹109,850</td>
+											</tr>
+											<tr>
+												<td>Vivian Harrell</td>
+												<td>San Francisco</td>
+												<td>62</td>
+												<td>2009/02/14</td>
+												<td>₹452,500</td>
+											</tr>
+											<tr>
+												<td>Timothy Mooney</td>
+												<td>London</td>
+												<td>37</td>
+												<td>2008/12/11</td>
+												<td>₹136,200</td>
+											</tr>
+											<tr>
+												<td>Jackson Bradshaw</td>
+												<td>New York</td>
+												<td>65</td>
+												<td>2008/09/26</td>
+												<td>₹645,750</td>
+											</tr>
+											<tr>
+												<td>Olivia Liang</td>
+												<td>Singapore</td>
+												<td>64</td>
+												<td>2011/02/03</td>
+												<td>₹234,500</td>
+											</tr>
+											<tr>
+												<td>Bruno Nash</td>
+												<td>London</td>
+												<td>38</td>
+												<td>2011/05/03</td>
+												<td>₹163,500</td>
+											</tr>
+											<tr>
+												<td>Sakura Yamamoto</td>
+												<td>Tokyo</td>
+												<td>37</td>
+												<td>2009/08/19</td>
+												<td>₹139,575</td>
+											</tr>
+											<tr>
+												<td>Thor Walton</td>
+												<td>New York</td>
+												<td>61</td>
+												<td>2013/08/11</td>
+												<td>₹98,540</td>
+											</tr>
+											<tr>
+												<td>Finn Camacho</td>
+												<td>San Francisco</td>
+												<td>47</td>
+												<td>2009/07/07</td>
+												<td>₹87,500</td>
+											</tr>
+											<tr>
+												<td>Serge Baldwin</td>
+												<td>Singapore</td>
+												<td>64</td>
+												<td>2012/04/09</td>
+												<td>₹138,575</td>
+											</tr>
+											<tr>
+												<td>Zenaida Frank</td>
+												<td>New York</td>
+												<td>63</td>
+												<td>2010/01/04</td>
+												<td>₹125,250</td>
+											</tr>
+											<tr>
+												<td>Zorita Serrano</td>
+												<td>San Francisco</td>
+												<td>56</td>
+												<td>2012/06/01</td>
+												<td>₹115,000</td>
+											</tr>
+											<tr>
+												<td>Jennifer Acosta</td>
+												<td>Edinburgh</td>
+												<td>43</td>
+												<td>2013/02/01</td>
+												<td>₹75,650</td>
+											</tr>
+											<tr>
+												<td>Cara Stevens</td>
+												<td>New York</td>
+												<td>46</td>
+												<td>2011/12/06</td>
+												<td>₹145,600</td>
+											</tr>
+											<tr>
+												<td>Hermione Butler</td>
+												<td>London</td>
+												<td>47</td>
+												<td>2011/03/21</td>
+												<td>₹356,250</td>
+											</tr>
+											<tr>
+												<td>Lael Greer</td>
+												<td>London</td>
+												<td>21</td>
+												<td>2009/02/27</td>
+												<td>₹103,500</td>
+											</tr>
+											<tr>
+												<td>Jonas Alexander</td>
+												<td>San Francisco</td>
+												<td>30</td>
+												<td>2010/07/14</td>
+												<td>₹86,500</td>
+											</tr>
+											<tr>
+												<td>Shad Decker</td>
+												<td>Edinburgh</td>
+												<td>51</td>
+												<td>2008/11/13</td>
+												<td>₹183,000</td>
+											</tr>
+											<tr>
+												<td>Michael Bruce</td>
+												<td>Singapore</td>
+												<td>29</td>
+												<td>2011/06/27</td>
+												<td>₹183,000</td>
+											</tr>
+											<tr>
+												<td>Donna Snider</td>
+												<td>New York</td>
+												<td>27</td>
+												<td>2011/01/25</td>
+												<td>₹112,000</td>
+											</tr>
+										</tbody>
+										<tfoot>
+											<tr>
+												<th>Name
+												</th>
+												<th>Office
+												</th>
+												<th>Age
+												</th>
+												<th>Start date
+												</th>
+												<th>Salary
+												</th>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--/.Card-->
+
+				</div>
+				<!--Grid column-->
+
+			</div>
+			<!--Grid row-->
+
+		</div>
+	</main>
+	<!--Main layout-->
+
+	<!--Footer-->
+	<footer class="page-footer text-center font-small primary-color-dark darken-2 mt-4 wow fadeIn">
+
+			<hr class="my-4">
+	
+			<!-- Social icons -->
+			<div class="pb-4">
+				<a href="https://www.facebook.com/#" target="_blank">
+					<i class="fa fa-facebook mr-3"></i>
+				</a>
+	
+				<a href="https://twitter.com/#" target="_blank">
+					<i class="fa fa-twitter mr-3"></i>
+				</a>
+	
+				<a href="https://www.youtube.com/#" target="_blank">
+					<i class="fa fa-youtube-play mr-3"></i>
+				</a>
+	
+				<a href="https://plus.google.com/u/0/b/#" target="_blank">
+					<i class="fa fa-google-plus mr-3"></i>
+				</a>
+	
+				<a href="https://github.com/#" target="_blank">
+					<i class="fa fa-github mr-3"></i>
+				</a>
+			</div>
+			<!-- Social icons -->
+	
+			<!--Copyright-->
+			<div class="footer-copyright py-3">
+				© 2018 Copyright:
+				<a href="../index.html" target="_blank"> SASevents.com </a>
+			</div>
+			<!--/.Copyright-->
+	
+		</footer>
+	<!--/.Footer-->
+
+	<!-- SCRIPTS -->
+	<!-- JQuery -->
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript" src="js/popper.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="js/mdb.min.js"></script>
+	<!-- Datatables JavaScript -->
+	<script type="text/javascript" src="js/addons/datatables.js"></script>
+	<!-- Initializations -->
+	<script type="text/javascript">
+		// Animations initialization
+		new WOW().init();
+	</script>
+
+	<script>
+		function badgeRemover() {
+			// Get the checkbox
+			var checkBox = document.getElementById("checkbox1");
+			// Get the output text
+			var text1 = document.getElementById("badge1");
+			var text2 = document.getElementById("badge2");
+
+			// If the checkbox is checked, display the output text
+			if (checkBox.checked == true) {
+				text1.style.display = "inline-block";
+				text2.style.display = "none";
+			} else {
+				text1.style.display = "none";
+				text2.style.display = "inline-block";
+			}
+		}
+
+	</script>
+	<script>
+		$(document).ready(function () {
+			$('#dtBasicExample').DataTable();
+			$('.dataTables_length').addClass('bs-select');
+		});
+	</script>
+
+</body>
+
+</html>

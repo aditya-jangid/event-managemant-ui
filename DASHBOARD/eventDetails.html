@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Admin Dashboard</title>
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="css/mdb.min.css" rel="stylesheet">
+	<!-- Your custom styles (optional) -->
+	<link href="css/style.min.css" rel="stylesheet">
+	<style>
+		#badge2{
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="grey lighten-3">
+
+	<!--Main Navigation-->
+	<header>
+
+		<!-- Navbar -->
+		<nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+			<div class="container-fluid">
+
+				<!-- Brand -->
+				<a class="navbar-brand waves-effect" href="../index.html" target="_blank">
+					<strong class="blue-text">SAS EVENTS</strong>
+					<!-- <img src="img/logo/sas.png" class="img" alt=""> -->
+				</a>
+
+				<!-- Collapse -->
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+				 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<!-- Links -->
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+					<!-- Left -->
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="../index.html#about_us_inpage">About Us</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="../index.html#discover_inpage">Discover</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="../index.html#events_inpage">Events</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="../index.html">Logout</a>
+						</li>
+					</ul>
+
+					<!-- Right -->
+					<ul class="navbar-nav nav-flex-icons">
+						<li class="nav-item">
+							<a href="#" class="nav-link waves-effect" target="_blank">
+								<i class="fa fa-facebook"></i>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link waves-effect" target="_blank">
+								<i class="fa fa-twitter"></i>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link waves-effect" target="_blank">
+								<i class="fa fa-google-plus"></i>
+							</a>
+						</li>
+					</ul>
+
+				</div>
+
+			</div>
+		</nav>
+		<!-- Navbar -->
+
+		<!-- Sidebar -->
+		<div class="sidebar-fixed position-fixed">
+
+			<a class="logo-wrapper waves-effect ml-4" href="../index.html">
+				<img src="img/logo/sas.png" class="img-fluid" alt="">
+			</a>
+
+			<div class="list-group list-group-flush">
+				<a href="eventEditor.html" class="list-group-item list-group-item-action waves-effect">
+					<i class="fa fa-users mr-3"></i>Attendees</a>
+				<a href="#" class="list-group-item active waves-effect">
+					<i class="fa fa-database fa-2x mr-3"></i>Details</a>
+				<a href="#" class="list-group-item list-group-item-action waves-effect">
+					<i class="fa fa-ticket mr-3"></i>Tickets</a>
+				<a href="#" class="list-group-item list-group-item-action waves-effect">
+					<i class="fa fa-wpforms mr-3"></i>Forms</a>
+				<!-- <a href="#" class="list-group-item list-group-item-action waves-effect">
+                    <i class="fa fa-money mr-3"></i>Discounts</a> -->
+				<a href="#" class="list-group-item list-group-item-action waves-effect">
+					<i class="fa fa-gear mr-3"></i>Settings</a>
+			</div>
+
+		</div>
+		<!-- Sidebar -->
+
+	</header>
+	<!--Main Navigation-->
+
+	<!--Main layout-->
+	<main class="pt-5 mx-lg-5">
+		<div class="container-fluid mt-5">
+
+			<!-- Heading -->
+			<div class="card mb-4 wow fadeIn">
+
+				<!--Card content-->
+				<div class="card-body d-sm-flex justify-content-between">
+					<div class="d-flex flex-row">
+						<h4 class="pr-3">
+							Event Name
+							<span class="badge badge-pill green ml-3" id="badge1">LIVE</span>
+							<span class="badge badge-pill red ml-3" id="badge2">NOT LIVE</span>
+						</h4>
+						<label class="bs-switch">
+							<input type="checkbox" checked id="checkbox1" onclick="badgeRemover()">
+							<span class="slider round"></span>
+						</label>
+					</div>
+					<form class="d-flex justify-content-center">
+						<!-- Default input -->
+						<input type="search" placeholder="Type your query" aria-label="Search" class="form-control">
+						<button class="btn btn-primary btn-sm my-0 p" type="submit">
+							<i class="fa fa-search"></i>
+						</button>
+					</form>
+				</div>
+			</div>
+			<!-- Heading -->
+
+			<!--Grid row-->
+			<div class="row wow fadeIn">
+
+				<!--Grid column-->
+				<div class="col-md-12 mb-4">
+
+					<!--Card-->
+					<div class="card">
+						<h4 class="text-center pt-4">
+							Details
+						</h4>
+						<hr class="my-2">
+						<!--Card content-->
+						<div class="card-body">
+							<div class="row">
+								<div class="col-md-12 text-center">
+									<button class="btn btn-danger waves-effect" onclick="location.href = 'createEvent.html';"><i class="fa fa-edit mr-2"></i>Edit Details</button>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-12 my-4">
+									<ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+										<li class="nav-item">
+											<a class="nav-link active" id="active-tab" data-toggle="tab" href="#active" role="tab" aria-controls="active"
+											 aria-selected="true">Basics</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" id="past-tab" data-toggle="tab" href="#past" role="tab" aria-controls="past"
+											 aria-selected="false">Description</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" id="location-tab" data-toggle="tab" href="#location" role="tab" aria-controls="past"
+											 aria-selected="false">Location</a>
+										</li>
+									</ul>
+									<div class="tab-content" id="myTabContent">
+										<div class="tab-pane fade show active" id="active" role="tabpanel" aria-labelledby="active-tab">
+											<!-- No event content -->
+											<div class="row">
+												<div class="col-sm-12 white">
+
+													<div class="col-sm-8 mx-auto my-5 py-5 px-5 grey lighten-5">
+														<h5 class="h5">Event Name</h5>
+														<p>Python</p>
+														<h5 class="h5">Event URL</h5>
+														<p>https://www.sasevents.com/e/python</p>
+														<h5 class="h5">Start Date </h5>
+														<p>15/10/2018 @ 6:00 AM</p>
+														<h5 class="h5">End Date</h5>
+														<p>15/10/2018 @ 7:00 AM</p>
+														<p class="text-center"><button type="button" class="btn btn-outline-blue btn-md" onclick="location.href = 'createEvent.html';"><i
+																 class="fa fa-pencil pr-2"></i>Edit Basics</button></p>
+													</div>
+
+
+												</div>
+											</div>
+											<!-- ./No event content -->
+
+											<!-- Three event content -->
+
+										</div>
+										<div class="tab-pane fade" id="past" role="tabpanel" aria-labelledby="past-tab">
+											<!-- No event content -->
+											<div class="col-sm-8 mx-auto my-5 py-5 px-5 grey lighten-5">
+												<h5 class="h5">Event Description</h5>
+												<p>Python workshop introduction with variables, lambda function and other.</p>
+												<p class="text-center"><button type="button" class="btn btn-outline-blue btn-md" onclick="location.href = 'createEvent.html';"><i
+														 class="fa fa-pencil pr-2"></i>Edit Description</button></p>
+											</div>
+											<!-- ./No event content -->
+										</div>
+										<div class="tab-pane fade" id="location" role="tabpanel" aria-labelledby="location-tab">
+											<!-- No event content -->
+											<div class="col-sm-8 mx-auto my-5 py-5 px-5 grey lighten-5">
+												<h5 class="h5">Event Location</h5>
+												<p>B.R.A.C.T's Vishwakarma Institute of technology, Pune</p>
+												<p class="text-center"><button type="button" class="btn btn-outline-blue btn-md" onclick="location.href = 'createEvent.html';"><i
+														 class="fa fa-pencil pr-2"></i>Edit Location</button></p>
+											</div>
+											<!-- ./No event content -->
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--/.Card-->
+
+				</div>
+				<!--Grid column-->
+
+			</div>
+			<!--Grid row-->
+
+		</div>
+	</main>
+	<!--Main layout-->
+
+	<!--Footer-->
+	<footer class="page-footer text-center font-small primary-color-dark darken-2 mt-4 wow fadeIn">
+
+		<hr class="my-4">
+
+		<!-- Social icons -->
+		<div class="pb-4">
+			<a href="https://www.facebook.com/#" target="_blank">
+				<i class="fa fa-facebook mr-3"></i>
+			</a>
+
+			<a href="https://twitter.com/#" target="_blank">
+				<i class="fa fa-twitter mr-3"></i>
+			</a>
+
+			<a href="https://www.youtube.com/#" target="_blank">
+				<i class="fa fa-youtube-play mr-3"></i>
+			</a>
+
+			<a href="https://plus.google.com/u/0/b/#" target="_blank">
+				<i class="fa fa-google-plus mr-3"></i>
+			</a>
+
+			<a href="https://github.com/#" target="_blank">
+				<i class="fa fa-github mr-3"></i>
+			</a>
+		</div>
+		<!-- Social icons -->
+
+		<!--Copyright-->
+		<div class="footer-copyright py-3">
+			© 2018 Copyright:
+			<a href="../index.html" target="_blank"> SASevents.com </a>
+		</div>
+		<!--/.Copyright-->
+
+	</footer>
+	<!--/.Footer-->
+
+	<!-- SCRIPTS -->
+	<!-- JQuery -->
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript" src="js/popper.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="js/mdb.min.js"></script>
+	<!-- Datatables JavaScript -->
+	<script type="text/javascript" src="js/addons/datatables.js"></script>
+	<!-- Initializations -->
+	<script type="text/javascript">
+		// Animations initialization
+		new WOW().init();
+	</script>
+
+	<script>
+		function badgeRemover() {
+			// Get the checkbox
+			var checkBox = document.getElementById("checkbox1");
+			// Get the output text
+			var text1 = document.getElementById("badge1");
+			var text2 = document.getElementById("badge2");
+
+			// If the checkbox is checked, display the output text
+			if (checkBox.checked == true) {
+				text1.style.display = "inline-block";
+				text2.style.display = "none";
+			} else {
+				text1.style.display = "none";
+				text2.style.display = "inline-block";
+			}
+		}
+
+	</script>
+	<script>
+		$(document).ready(function () {
+			$('#dtBasicExample').DataTable();
+			$('.dataTables_length').addClass('bs-select');
+		});
+	</script>
+
+</body>
+
+</html>
